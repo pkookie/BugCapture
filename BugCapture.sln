@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BugCapture.MVC", "BugCapture.MVC\BugCapture.MVC.csproj", "{ADBC3639-A4C6-463E-A2EF-CCC038CFADC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BugCapture.MVC.Tests", "BugCapture.MVC.Tests\BugCapture.MVC.Tests.csproj", "{CDC55D2F-3457-4AC6-83B7-4810B3333656}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ADBC3639-A4C6-463E-A2EF-CCC038CFADC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADBC3639-A4C6-463E-A2EF-CCC038CFADC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADBC3639-A4C6-463E-A2EF-CCC038CFADC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADBC3639-A4C6-463E-A2EF-CCC038CFADC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDC55D2F-3457-4AC6-83B7-4810B3333656}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDC55D2F-3457-4AC6-83B7-4810B3333656}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDC55D2F-3457-4AC6-83B7-4810B3333656}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDC55D2F-3457-4AC6-83B7-4810B3333656}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
