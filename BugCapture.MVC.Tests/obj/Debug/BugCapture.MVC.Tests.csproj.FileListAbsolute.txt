@@ -68,3 +68,7 @@ D:\Projects\Personal Sandbox\BugCapture\BugCapture.MVC.Tests\bin\Debug\zh-Hant\S
 D:\Projects\Personal Sandbox\BugCapture\BugCapture.MVC.Tests\obj\Debug\BugCapture.MVC.Tests.csprojResolveAssemblyReference.cache
 D:\Projects\Personal Sandbox\BugCapture\BugCapture.MVC.Tests\obj\Debug\BugCapture.MVC.Tests.dll
 D:\Projects\Personal Sandbox\BugCapture\BugCapture.MVC.Tests\obj\Debug\BugCapture.MVC.Tests.pdb
+D:\Projects\Personal Sandbox\BugCapture\BugCapture.MVC.Tests\bin\Debug\BugCapture.Domain.dll
+D:\Projects\Personal Sandbox\BugCapture\BugCapture.MVC.Tests\bin\Debug\EntityFramework.dll
+D:\Projects\Personal Sandbox\BugCapture\BugCapture.MVC.Tests\bin\Debug\BugCapture.Domain.pdb
+D:\Projects\Personal Sandbox\BugCapture\BugCapture.MVC.Tests\bin\Debug\EntityFramework.xml
