@@ -1,0 +1,7 @@
+D:\Projects\Personal Sandbox\BugCapture\BugCapture.Domain\bin\Debug\BugCapture.Domain.dll.config
+D:\Projects\Personal Sandbox\BugCapture\BugCapture.Domain\bin\Debug\BugCapture.Domain.dll
+D:\Projects\Personal Sandbox\BugCapture\BugCapture.Domain\bin\Debug\BugCapture.Domain.pdb
+D:\Projects\Personal Sandbox\BugCapture\BugCapture.Domain\bin\Debug\EntityFramework.dll
+D:\Projects\Personal Sandbox\BugCapture\BugCapture.Domain\bin\Debug\EntityFramework.xml
+D:\Projects\Personal Sandbox\BugCapture\BugCapture.Domain\obj\Debug\BugCapture.Domain.dll
+D:\Projects\Personal Sandbox\BugCapture\BugCapture.Domain\obj\Debug\BugCapture.Domain.pdb

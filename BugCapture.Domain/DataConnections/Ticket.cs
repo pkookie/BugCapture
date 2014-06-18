@@ -16,7 +16,7 @@ namespace BugCapture.Domain.DataConnections
     {
         public Ticket()
         {
-            this.SystemTickets = new HashSet<SystemTicket>();
+            this.ApplicationTickets = new HashSet<ApplicationTicket>();
             this.TicketDocuments = new HashSet<TicketDocument>();
             this.UserTickets = new HashSet<UserTicket>();
         }
@@ -31,8 +31,8 @@ namespace BugCapture.Domain.DataConnections
         public string ActualOutcome { get; set; }
         public string WorkAround { get; set; }
     
+        public virtual ICollection<ApplicationTicket> ApplicationTickets { get; set; }
         public virtual Priority Priority { get; set; }
-        public virtual ICollection<SystemTicket> SystemTickets { get; set; }
         public virtual ICollection<TicketDocument> TicketDocuments { get; set; }
         public virtual ICollection<UserTicket> UserTickets { get; set; }
     }

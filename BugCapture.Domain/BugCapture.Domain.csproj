@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataConnections\Application.cs">
+      <DependentUpon>BugCaptureModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataConnections\ApplicationTicket.cs">
+      <DependentUpon>BugCaptureModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DataConnections\BugCaptureModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -68,15 +74,6 @@
       <DependentUpon>BugCaptureModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DataConnections\Priority.cs">
-      <DependentUpon>BugCaptureModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataConnections\sysdiagram.cs">
-      <DependentUpon>BugCaptureModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataConnections\System.cs">
-      <DependentUpon>BugCaptureModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataConnections\SystemTicket.cs">
       <DependentUpon>BugCaptureModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DataConnections\Ticket.cs">

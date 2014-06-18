@@ -1,0 +1,94 @@
+﻿@model BugCapture.Domain.DataConnections.Ticket
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Ticket</legend>
+
+        @Html.HiddenFor(model => model.TicketId)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RaisedOn)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.RaisedOn)
+            @Html.ValidationMessageFor(model => model.RaisedOn)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PriorityId, "Priority")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("PriorityId", String.Empty)
+            @Html.ValidationMessageFor(model => model.PriorityId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ProblemSummary)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ProblemSummary)
+            @Html.ValidationMessageFor(model => model.ProblemSummary)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ProblemDescription)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ProblemDescription)
+            @Html.ValidationMessageFor(model => model.ProblemDescription)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.StepsToReproduce)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.StepsToReproduce)
+            @Html.ValidationMessageFor(model => model.StepsToReproduce)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ExpectedOutcome)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ExpectedOutcome)
+            @Html.ValidationMessageFor(model => model.ExpectedOutcome)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ActualOutcome)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ActualOutcome)
+            @Html.ValidationMessageFor(model => model.ActualOutcome)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WorkAround)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WorkAround)
+            @Html.ValidationMessageFor(model => model.WorkAround)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

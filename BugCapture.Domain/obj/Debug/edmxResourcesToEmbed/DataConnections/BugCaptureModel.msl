@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ICT_Bug_CaptureModelStoreContainer" CdmEntityContainer="ICT_Bug_CaptureEntities">
+    <EntitySetMapping Name="Applications">
+      <EntityTypeMapping TypeName="ICT_Bug_CaptureModel.Application">
+        <MappingFragment StoreEntitySet="Applications">
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ApplicationTickets">
+      <EntityTypeMapping TypeName="ICT_Bug_CaptureModel.ApplicationTicket">
+        <MappingFragment StoreEntitySet="ApplicationTickets">
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="TicketId" ColumnName="TicketId" />
+          <ScalarProperty Name="ApplicationTicketId" ColumnName="ApplicationTicketId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Documents">
+      <EntityTypeMapping TypeName="ICT_Bug_CaptureModel.Document">
+        <MappingFragment StoreEntitySet="Documents">
+          <ScalarProperty Name="DocumentTypeId" ColumnName="DocumentTypeId" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DocumentId" ColumnName="DocumentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentTypes">
+      <EntityTypeMapping TypeName="ICT_Bug_CaptureModel.DocumentType">
+        <MappingFragment StoreEntitySet="DocumentTypes">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DocumentTypeId" ColumnName="DocumentTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Priorities">
+      <EntityTypeMapping TypeName="ICT_Bug_CaptureModel.Priority">
+        <MappingFragment StoreEntitySet="Priorities">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PriorityId" ColumnName="PriorityId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TicketDocuments">
+      <EntityTypeMapping TypeName="ICT_Bug_CaptureModel.TicketDocument">
+        <MappingFragment StoreEntitySet="TicketDocuments">
+          <ScalarProperty Name="DocumentId" ColumnName="DocumentId" />
+          <ScalarProperty Name="TicketId" ColumnName="TicketId" />
+          <ScalarProperty Name="TicketDocumentsId" ColumnName="TicketDocumentsId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tickets">
+      <EntityTypeMapping TypeName="ICT_Bug_CaptureModel.Ticket">
+        <MappingFragment StoreEntitySet="Tickets">
+          <ScalarProperty Name="WorkAround" ColumnName="WorkAround" />
+          <ScalarProperty Name="ActualOutcome" ColumnName="ActualOutcome" />
+          <ScalarProperty Name="ExpectedOutcome" ColumnName="ExpectedOutcome" />
+          <ScalarProperty Name="StepsToReproduce" ColumnName="StepsToReproduce" />
+          <ScalarProperty Name="ProblemDescription" ColumnName="ProblemDescription" />
+          <ScalarProperty Name="ProblemSummary" ColumnName="ProblemSummary" />
+          <ScalarProperty Name="PriorityId" ColumnName="PriorityId" />
+          <ScalarProperty Name="RaisedOn" ColumnName="RaisedOn" />
+          <ScalarProperty Name="TicketId" ColumnName="TicketId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserTickets">
+      <EntityTypeMapping TypeName="ICT_Bug_CaptureModel.UserTicket">
+        <MappingFragment StoreEntitySet="UserTickets">
+          <ScalarProperty Name="OpenID" ColumnName="OpenID" />
+          <ScalarProperty Name="TicketId" ColumnName="TicketId" />
+          <ScalarProperty Name="ClientTicketId" ColumnName="ClientTicketId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

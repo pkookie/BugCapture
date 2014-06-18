@@ -12,13 +12,18 @@ namespace BugCapture.Domain.DataConnections
     using System;
     using System.Collections.Generic;
     
-    public partial class SystemTicket
+    public partial class Application
     {
-        public int SystemTicketId { get; set; }
-        public int TicketId { get; set; }
-        public int SystemId { get; set; }
+        public Application()
+        {
+            this.ApplicationTickets = new HashSet<ApplicationTicket>();
+        }
     
-        public virtual System System { get; set; }
-        public virtual Ticket Ticket { get; set; }
+        public int ApplicationId { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public string URL { get; set; }
+    
+        public virtual ICollection<ApplicationTicket> ApplicationTickets { get; set; }
     }
 }

@@ -25,12 +25,11 @@ namespace BugCapture.Domain.DataConnections
             throw new UnintentionalCodeFirstException();
         }
     
+        public DbSet<Application> Applications { get; set; }
+        public DbSet<ApplicationTicket> ApplicationTickets { get; set; }
         public DbSet<Document> Documents { get; set; }
         public DbSet<DocumentType> DocumentTypes { get; set; }
         public DbSet<Priority> Priorities { get; set; }
-        public DbSet<sysdiagram> sysdiagrams { get; set; }
-        public DbSet<System> Systems { get; set; }
-        public DbSet<SystemTicket> SystemTickets { get; set; }
         public DbSet<TicketDocument> TicketDocuments { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
         public DbSet<UserTicket> UserTickets { get; set; }

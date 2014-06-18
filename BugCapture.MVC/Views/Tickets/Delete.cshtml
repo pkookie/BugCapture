@@ -1,0 +1,75 @@
+﻿@model BugCapture.Domain.DataConnections.Ticket
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Ticket</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.RaisedOn)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RaisedOn)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Priority.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Priority.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ProblemSummary)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ProblemSummary)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ProblemDescription)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ProblemDescription)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.StepsToReproduce)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.StepsToReproduce)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ExpectedOutcome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ExpectedOutcome)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ActualOutcome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ActualOutcome)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.WorkAround)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.WorkAround)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

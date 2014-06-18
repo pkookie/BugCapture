@@ -1,0 +1,71 @@
+﻿@model BugCapture.Domain.DataConnections.Ticket
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Ticket</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.RaisedOn)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RaisedOn)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Priority.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Priority.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ProblemSummary)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ProblemSummary)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ProblemDescription)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ProblemDescription)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.StepsToReproduce)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.StepsToReproduce)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ExpectedOutcome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ExpectedOutcome)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ActualOutcome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ActualOutcome)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.WorkAround)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.WorkAround)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.TicketId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

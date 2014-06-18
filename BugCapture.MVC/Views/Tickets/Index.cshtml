@@ -1,0 +1,75 @@
+﻿@model IEnumerable<BugCapture.Domain.DataConnections.Ticket>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RaisedOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Priority.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProblemSummary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProblemDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StepsToReproduce)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExpectedOutcome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ActualOutcome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WorkAround)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RaisedOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Priority.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProblemSummary)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProblemDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StepsToReproduce)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExpectedOutcome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActualOutcome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WorkAround)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TicketId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TicketId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TicketId })
+        </td>
+    </tr>
+}
+
+</table>
