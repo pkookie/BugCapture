@@ -5,6 +5,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BugCapture.MVC", "BugCaptur
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BugCapture.MVC.Tests", "BugCapture.MVC.Tests\BugCapture.MVC.Tests.csproj", "{CDC55D2F-3457-4AC6-83B7-4810B3333656}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQL Scripts", "SQL Scripts", "{F398AFC2-83C6-4876-A145-BE26C2F2F632}"
+	ProjectSection(SolutionItems) = preProject
+		\\TCFSH01\3083595$\ProfileData\Desktop\CreateDatabase.sql = \\TCFSH01\3083595$\ProfileData\Desktop\CreateDatabase.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
