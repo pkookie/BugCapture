@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQL Scripts", "SQL Scripts"
 		\\TCFSH01\3083595$\ProfileData\Desktop\CreateDatabase.sql = \\TCFSH01\3083595$\ProfileData\Desktop\CreateDatabase.sql
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BugCapture.Domain", "BugCapture.Domain\BugCapture.Domain.csproj", "{9295DCD0-9549-4D8C-A3C3-3CE2B616A47D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +26,10 @@ Global
 		{CDC55D2F-3457-4AC6-83B7-4810B3333656}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDC55D2F-3457-4AC6-83B7-4810B3333656}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDC55D2F-3457-4AC6-83B7-4810B3333656}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9295DCD0-9549-4D8C-A3C3-3CE2B616A47D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9295DCD0-9549-4D8C-A3C3-3CE2B616A47D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9295DCD0-9549-4D8C-A3C3-3CE2B616A47D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9295DCD0-9549-4D8C-A3C3-3CE2B616A47D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

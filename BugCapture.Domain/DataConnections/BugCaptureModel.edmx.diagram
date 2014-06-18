@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="903b481d0b2a4ebbaa6da051a400ca06" Name="Diagram1">
+        <EntityTypeShape EntityType="ICT_Bug_CaptureModel.Document" Width="1.5" PointX="3" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ICT_Bug_CaptureModel.DocumentType" Width="1.5" PointX="0.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="ICT_Bug_CaptureModel.Priority" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ICT_Bug_CaptureModel.sysdiagram" Width="1.5" PointX="7.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ICT_Bug_CaptureModel.System" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ICT_Bug_CaptureModel.SystemTicket" Width="1.5" PointX="5.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ICT_Bug_CaptureModel.TicketDocument" Width="1.5" PointX="5.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ICT_Bug_CaptureModel.Ticket" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="ICT_Bug_CaptureModel.UserTicket" Width="1.5" PointX="5.25" PointY="10.25" IsExpanded="true" />
+        <AssociationConnector Association="ICT_Bug_CaptureModel.FK_Documents_DocumentTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="ICT_Bug_CaptureModel.FK_TicketDocuments_Documents" ManuallyRouted="false" />
+        <AssociationConnector Association="ICT_Bug_CaptureModel.FK_Tickets_Priorities" ManuallyRouted="false" />
+        <AssociationConnector Association="ICT_Bug_CaptureModel.FK_SystemTickets_Systems" ManuallyRouted="false" />
+        <AssociationConnector Association="ICT_Bug_CaptureModel.FK_SystemTickets_Tickets" ManuallyRouted="false" />
+        <AssociationConnector Association="ICT_Bug_CaptureModel.FK_TicketDocuments_Tickets" ManuallyRouted="false" />
+        <AssociationConnector Association="ICT_Bug_CaptureModel.FK_UserTickets_Tickets" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

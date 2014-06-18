@@ -1,0 +1,553 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ICT_Bug_CaptureModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="ICT_Bug_CaptureModelStoreContainer">
+          <EntitySet Name="Documents" EntityType="ICT_Bug_CaptureModel.Store.Documents" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DocumentTypes" EntityType="ICT_Bug_CaptureModel.Store.DocumentTypes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Priorities" EntityType="ICT_Bug_CaptureModel.Store.Priorities" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="ICT_Bug_CaptureModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Systems" EntityType="ICT_Bug_CaptureModel.Store.Systems" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SystemTickets" EntityType="ICT_Bug_CaptureModel.Store.SystemTickets" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TicketDocuments" EntityType="ICT_Bug_CaptureModel.Store.TicketDocuments" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Tickets" EntityType="ICT_Bug_CaptureModel.Store.Tickets" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserTickets" EntityType="ICT_Bug_CaptureModel.Store.UserTickets" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Documents_DocumentTypes" Association="ICT_Bug_CaptureModel.Store.FK_Documents_DocumentTypes">
+            <End Role="DocumentTypes" EntitySet="DocumentTypes" />
+            <End Role="Documents" EntitySet="Documents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SystemTickets_Systems" Association="ICT_Bug_CaptureModel.Store.FK_SystemTickets_Systems">
+            <End Role="Systems" EntitySet="Systems" />
+            <End Role="SystemTickets" EntitySet="SystemTickets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SystemTickets_Tickets" Association="ICT_Bug_CaptureModel.Store.FK_SystemTickets_Tickets">
+            <End Role="Tickets" EntitySet="Tickets" />
+            <End Role="SystemTickets" EntitySet="SystemTickets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TicketDocuments_Documents" Association="ICT_Bug_CaptureModel.Store.FK_TicketDocuments_Documents">
+            <End Role="Documents" EntitySet="Documents" />
+            <End Role="TicketDocuments" EntitySet="TicketDocuments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TicketDocuments_Tickets" Association="ICT_Bug_CaptureModel.Store.FK_TicketDocuments_Tickets">
+            <End Role="Tickets" EntitySet="Tickets" />
+            <End Role="TicketDocuments" EntitySet="TicketDocuments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tickets_Priorities" Association="ICT_Bug_CaptureModel.Store.FK_Tickets_Priorities">
+            <End Role="Priorities" EntitySet="Priorities" />
+            <End Role="Tickets" EntitySet="Tickets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserTickets_Tickets" Association="ICT_Bug_CaptureModel.Store.FK_UserTickets_Tickets">
+            <End Role="Tickets" EntitySet="Tickets" />
+            <End Role="UserTickets" EntitySet="UserTickets" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Documents">
+          <Key>
+            <PropertyRef Name="DocumentId" />
+          </Key>
+          <Property Name="DocumentId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="Data" Type="varbinary(max)" Nullable="false" />
+          <Property Name="DocumentTypeId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DocumentTypes">
+          <Key>
+            <PropertyRef Name="DocumentTypeId" />
+          </Key>
+          <Property Name="DocumentTypeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Priorities">
+          <Key>
+            <PropertyRef Name="PriorityId" />
+          </Key>
+          <Property Name="PriorityId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Systems">
+          <Key>
+            <PropertyRef Name="SystemId" />
+          </Key>
+          <Property Name="SystemId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="Description" Type="nvarchar" MaxLength="1000" />
+          <Property Name="URL" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="SystemTickets">
+          <Key>
+            <PropertyRef Name="SystemTicketId" />
+          </Key>
+          <Property Name="SystemTicketId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TicketId" Type="int" Nullable="false" />
+          <Property Name="SystemId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TicketDocuments">
+          <Key>
+            <PropertyRef Name="TicketDocumentsId" />
+          </Key>
+          <Property Name="TicketDocumentsId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TicketId" Type="int" Nullable="false" />
+          <Property Name="DocumentId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tickets">
+          <Key>
+            <PropertyRef Name="TicketId" />
+          </Key>
+          <Property Name="TicketId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RaisedOn" Type="datetime" Nullable="false" />
+          <Property Name="PriorityId" Type="int" Nullable="false" />
+          <Property Name="ProblemSummary" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ProblemDescription" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="StepsToReproduce" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ExpectedOutcome" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ActualOutcome" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="WorkAround" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="UserTickets">
+          <Key>
+            <PropertyRef Name="ClientTicketId" />
+          </Key>
+          <Property Name="ClientTicketId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TicketId" Type="int" Nullable="false" />
+          <Property Name="OpenID" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Documents_DocumentTypes">
+          <End Role="DocumentTypes" Type="ICT_Bug_CaptureModel.Store.DocumentTypes" Multiplicity="1" />
+          <End Role="Documents" Type="ICT_Bug_CaptureModel.Store.Documents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DocumentTypes">
+              <PropertyRef Name="DocumentTypeId" />
+            </Principal>
+            <Dependent Role="Documents">
+              <PropertyRef Name="DocumentTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SystemTickets_Systems">
+          <End Role="Systems" Type="ICT_Bug_CaptureModel.Store.Systems" Multiplicity="1" />
+          <End Role="SystemTickets" Type="ICT_Bug_CaptureModel.Store.SystemTickets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Systems">
+              <PropertyRef Name="SystemId" />
+            </Principal>
+            <Dependent Role="SystemTickets">
+              <PropertyRef Name="SystemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SystemTickets_Tickets">
+          <End Role="Tickets" Type="ICT_Bug_CaptureModel.Store.Tickets" Multiplicity="1" />
+          <End Role="SystemTickets" Type="ICT_Bug_CaptureModel.Store.SystemTickets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tickets">
+              <PropertyRef Name="TicketId" />
+            </Principal>
+            <Dependent Role="SystemTickets">
+              <PropertyRef Name="TicketId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TicketDocuments_Documents">
+          <End Role="Documents" Type="ICT_Bug_CaptureModel.Store.Documents" Multiplicity="1" />
+          <End Role="TicketDocuments" Type="ICT_Bug_CaptureModel.Store.TicketDocuments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Documents">
+              <PropertyRef Name="DocumentId" />
+            </Principal>
+            <Dependent Role="TicketDocuments">
+              <PropertyRef Name="DocumentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TicketDocuments_Tickets">
+          <End Role="Tickets" Type="ICT_Bug_CaptureModel.Store.Tickets" Multiplicity="1" />
+          <End Role="TicketDocuments" Type="ICT_Bug_CaptureModel.Store.TicketDocuments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tickets">
+              <PropertyRef Name="TicketId" />
+            </Principal>
+            <Dependent Role="TicketDocuments">
+              <PropertyRef Name="TicketId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tickets_Priorities">
+          <End Role="Priorities" Type="ICT_Bug_CaptureModel.Store.Priorities" Multiplicity="1" />
+          <End Role="Tickets" Type="ICT_Bug_CaptureModel.Store.Tickets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Priorities">
+              <PropertyRef Name="PriorityId" />
+            </Principal>
+            <Dependent Role="Tickets">
+              <PropertyRef Name="PriorityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserTickets_Tickets">
+          <End Role="Tickets" Type="ICT_Bug_CaptureModel.Store.Tickets" Multiplicity="1" />
+          <End Role="UserTickets" Type="ICT_Bug_CaptureModel.Store.UserTickets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tickets">
+              <PropertyRef Name="TicketId" />
+            </Principal>
+            <Dependent Role="UserTickets">
+              <PropertyRef Name="TicketId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ICT_Bug_CaptureModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="ICT_Bug_CaptureEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Documents" EntityType="ICT_Bug_CaptureModel.Document" />
+          <EntitySet Name="DocumentTypes" EntityType="ICT_Bug_CaptureModel.DocumentType" />
+          <EntitySet Name="Priorities" EntityType="ICT_Bug_CaptureModel.Priority" />
+          <EntitySet Name="sysdiagrams" EntityType="ICT_Bug_CaptureModel.sysdiagram" />
+          <EntitySet Name="Systems" EntityType="ICT_Bug_CaptureModel.System" />
+          <EntitySet Name="SystemTickets" EntityType="ICT_Bug_CaptureModel.SystemTicket" />
+          <EntitySet Name="TicketDocuments" EntityType="ICT_Bug_CaptureModel.TicketDocument" />
+          <EntitySet Name="Tickets" EntityType="ICT_Bug_CaptureModel.Ticket" />
+          <EntitySet Name="UserTickets" EntityType="ICT_Bug_CaptureModel.UserTicket" />
+          <AssociationSet Name="FK_Documents_DocumentTypes" Association="ICT_Bug_CaptureModel.FK_Documents_DocumentTypes">
+            <End Role="DocumentTypes" EntitySet="DocumentTypes" />
+            <End Role="Documents" EntitySet="Documents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TicketDocuments_Documents" Association="ICT_Bug_CaptureModel.FK_TicketDocuments_Documents">
+            <End Role="Documents" EntitySet="Documents" />
+            <End Role="TicketDocuments" EntitySet="TicketDocuments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tickets_Priorities" Association="ICT_Bug_CaptureModel.FK_Tickets_Priorities">
+            <End Role="Priorities" EntitySet="Priorities" />
+            <End Role="Tickets" EntitySet="Tickets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SystemTickets_Systems" Association="ICT_Bug_CaptureModel.FK_SystemTickets_Systems">
+            <End Role="Systems" EntitySet="Systems" />
+            <End Role="SystemTickets" EntitySet="SystemTickets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SystemTickets_Tickets" Association="ICT_Bug_CaptureModel.FK_SystemTickets_Tickets">
+            <End Role="Tickets" EntitySet="Tickets" />
+            <End Role="SystemTickets" EntitySet="SystemTickets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TicketDocuments_Tickets" Association="ICT_Bug_CaptureModel.FK_TicketDocuments_Tickets">
+            <End Role="Tickets" EntitySet="Tickets" />
+            <End Role="TicketDocuments" EntitySet="TicketDocuments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserTickets_Tickets" Association="ICT_Bug_CaptureModel.FK_UserTickets_Tickets">
+            <End Role="Tickets" EntitySet="Tickets" />
+            <End Role="UserTickets" EntitySet="UserTickets" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Document">
+          <Key>
+            <PropertyRef Name="DocumentId" />
+          </Key>
+          <Property Name="DocumentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Data" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="DocumentTypeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="DocumentType" Relationship="ICT_Bug_CaptureModel.FK_Documents_DocumentTypes" FromRole="Documents" ToRole="DocumentTypes" />
+          <NavigationProperty Name="TicketDocuments" Relationship="ICT_Bug_CaptureModel.FK_TicketDocuments_Documents" FromRole="Documents" ToRole="TicketDocuments" />
+        </EntityType>
+        <EntityType Name="DocumentType">
+          <Key>
+            <PropertyRef Name="DocumentTypeId" />
+          </Key>
+          <Property Name="DocumentTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Documents" Relationship="ICT_Bug_CaptureModel.FK_Documents_DocumentTypes" FromRole="DocumentTypes" ToRole="Documents" />
+        </EntityType>
+        <EntityType Name="Priority">
+          <Key>
+            <PropertyRef Name="PriorityId" />
+          </Key>
+          <Property Name="PriorityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Tickets" Relationship="ICT_Bug_CaptureModel.FK_Tickets_Priorities" FromRole="Priorities" ToRole="Tickets" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="System">
+          <Key>
+            <PropertyRef Name="SystemId" />
+          </Key>
+          <Property Name="SystemId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+          <Property Name="URL" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="SystemTickets" Relationship="ICT_Bug_CaptureModel.FK_SystemTickets_Systems" FromRole="Systems" ToRole="SystemTickets" />
+        </EntityType>
+        <EntityType Name="SystemTicket">
+          <Key>
+            <PropertyRef Name="SystemTicketId" />
+          </Key>
+          <Property Name="SystemTicketId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TicketId" Type="Int32" Nullable="false" />
+          <Property Name="SystemId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="System" Relationship="ICT_Bug_CaptureModel.FK_SystemTickets_Systems" FromRole="SystemTickets" ToRole="Systems" />
+          <NavigationProperty Name="Ticket" Relationship="ICT_Bug_CaptureModel.FK_SystemTickets_Tickets" FromRole="SystemTickets" ToRole="Tickets" />
+        </EntityType>
+        <EntityType Name="TicketDocument">
+          <Key>
+            <PropertyRef Name="TicketDocumentsId" />
+          </Key>
+          <Property Name="TicketDocumentsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TicketId" Type="Int32" Nullable="false" />
+          <Property Name="DocumentId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Document" Relationship="ICT_Bug_CaptureModel.FK_TicketDocuments_Documents" FromRole="TicketDocuments" ToRole="Documents" />
+          <NavigationProperty Name="Ticket" Relationship="ICT_Bug_CaptureModel.FK_TicketDocuments_Tickets" FromRole="TicketDocuments" ToRole="Tickets" />
+        </EntityType>
+        <EntityType Name="Ticket">
+          <Key>
+            <PropertyRef Name="TicketId" />
+          </Key>
+          <Property Name="TicketId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RaisedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="PriorityId" Type="Int32" Nullable="false" />
+          <Property Name="ProblemSummary" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="ProblemDescription" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="StepsToReproduce" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="ExpectedOutcome" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="ActualOutcome" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="WorkAround" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Priority" Relationship="ICT_Bug_CaptureModel.FK_Tickets_Priorities" FromRole="Tickets" ToRole="Priorities" />
+          <NavigationProperty Name="SystemTickets" Relationship="ICT_Bug_CaptureModel.FK_SystemTickets_Tickets" FromRole="Tickets" ToRole="SystemTickets" />
+          <NavigationProperty Name="TicketDocuments" Relationship="ICT_Bug_CaptureModel.FK_TicketDocuments_Tickets" FromRole="Tickets" ToRole="TicketDocuments" />
+          <NavigationProperty Name="UserTickets" Relationship="ICT_Bug_CaptureModel.FK_UserTickets_Tickets" FromRole="Tickets" ToRole="UserTickets" />
+        </EntityType>
+        <EntityType Name="UserTicket">
+          <Key>
+            <PropertyRef Name="ClientTicketId" />
+          </Key>
+          <Property Name="ClientTicketId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TicketId" Type="Int32" Nullable="false" />
+          <Property Name="OpenID" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="Ticket" Relationship="ICT_Bug_CaptureModel.FK_UserTickets_Tickets" FromRole="UserTickets" ToRole="Tickets" />
+        </EntityType>
+        <Association Name="FK_Documents_DocumentTypes">
+          <End Role="DocumentTypes" Type="ICT_Bug_CaptureModel.DocumentType" Multiplicity="1" />
+          <End Role="Documents" Type="ICT_Bug_CaptureModel.Document" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DocumentTypes">
+              <PropertyRef Name="DocumentTypeId" />
+            </Principal>
+            <Dependent Role="Documents">
+              <PropertyRef Name="DocumentTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TicketDocuments_Documents">
+          <End Role="Documents" Type="ICT_Bug_CaptureModel.Document" Multiplicity="1" />
+          <End Role="TicketDocuments" Type="ICT_Bug_CaptureModel.TicketDocument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Documents">
+              <PropertyRef Name="DocumentId" />
+            </Principal>
+            <Dependent Role="TicketDocuments">
+              <PropertyRef Name="DocumentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tickets_Priorities">
+          <End Role="Priorities" Type="ICT_Bug_CaptureModel.Priority" Multiplicity="1" />
+          <End Role="Tickets" Type="ICT_Bug_CaptureModel.Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Priorities">
+              <PropertyRef Name="PriorityId" />
+            </Principal>
+            <Dependent Role="Tickets">
+              <PropertyRef Name="PriorityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SystemTickets_Systems">
+          <End Role="Systems" Type="ICT_Bug_CaptureModel.System" Multiplicity="1" />
+          <End Role="SystemTickets" Type="ICT_Bug_CaptureModel.SystemTicket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Systems">
+              <PropertyRef Name="SystemId" />
+            </Principal>
+            <Dependent Role="SystemTickets">
+              <PropertyRef Name="SystemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SystemTickets_Tickets">
+          <End Role="Tickets" Type="ICT_Bug_CaptureModel.Ticket" Multiplicity="1" />
+          <End Role="SystemTickets" Type="ICT_Bug_CaptureModel.SystemTicket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tickets">
+              <PropertyRef Name="TicketId" />
+            </Principal>
+            <Dependent Role="SystemTickets">
+              <PropertyRef Name="TicketId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TicketDocuments_Tickets">
+          <End Role="Tickets" Type="ICT_Bug_CaptureModel.Ticket" Multiplicity="1" />
+          <End Role="TicketDocuments" Type="ICT_Bug_CaptureModel.TicketDocument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tickets">
+              <PropertyRef Name="TicketId" />
+            </Principal>
+            <Dependent Role="TicketDocuments">
+              <PropertyRef Name="TicketId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserTickets_Tickets">
+          <End Role="Tickets" Type="ICT_Bug_CaptureModel.Ticket" Multiplicity="1" />
+          <End Role="UserTickets" Type="ICT_Bug_CaptureModel.UserTicket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tickets">
+              <PropertyRef Name="TicketId" />
+            </Principal>
+            <Dependent Role="UserTickets">
+              <PropertyRef Name="TicketId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ICT_Bug_CaptureModelStoreContainer" CdmEntityContainer="ICT_Bug_CaptureEntities">
+          <EntitySetMapping Name="Documents">
+            <EntityTypeMapping TypeName="ICT_Bug_CaptureModel.Document">
+              <MappingFragment StoreEntitySet="Documents">
+                <ScalarProperty Name="DocumentId" ColumnName="DocumentId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+                <ScalarProperty Name="DocumentTypeId" ColumnName="DocumentTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DocumentTypes">
+            <EntityTypeMapping TypeName="ICT_Bug_CaptureModel.DocumentType">
+              <MappingFragment StoreEntitySet="DocumentTypes">
+                <ScalarProperty Name="DocumentTypeId" ColumnName="DocumentTypeId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Priorities">
+            <EntityTypeMapping TypeName="ICT_Bug_CaptureModel.Priority">
+              <MappingFragment StoreEntitySet="Priorities">
+                <ScalarProperty Name="PriorityId" ColumnName="PriorityId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="ICT_Bug_CaptureModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Systems">
+            <EntityTypeMapping TypeName="ICT_Bug_CaptureModel.System">
+              <MappingFragment StoreEntitySet="Systems">
+                <ScalarProperty Name="SystemId" ColumnName="SystemId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="URL" ColumnName="URL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SystemTickets">
+            <EntityTypeMapping TypeName="ICT_Bug_CaptureModel.SystemTicket">
+              <MappingFragment StoreEntitySet="SystemTickets">
+                <ScalarProperty Name="SystemTicketId" ColumnName="SystemTicketId" />
+                <ScalarProperty Name="TicketId" ColumnName="TicketId" />
+                <ScalarProperty Name="SystemId" ColumnName="SystemId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TicketDocuments">
+            <EntityTypeMapping TypeName="ICT_Bug_CaptureModel.TicketDocument">
+              <MappingFragment StoreEntitySet="TicketDocuments">
+                <ScalarProperty Name="TicketDocumentsId" ColumnName="TicketDocumentsId" />
+                <ScalarProperty Name="TicketId" ColumnName="TicketId" />
+                <ScalarProperty Name="DocumentId" ColumnName="DocumentId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tickets">
+            <EntityTypeMapping TypeName="ICT_Bug_CaptureModel.Ticket">
+              <MappingFragment StoreEntitySet="Tickets">
+                <ScalarProperty Name="TicketId" ColumnName="TicketId" />
+                <ScalarProperty Name="RaisedOn" ColumnName="RaisedOn" />
+                <ScalarProperty Name="PriorityId" ColumnName="PriorityId" />
+                <ScalarProperty Name="ProblemSummary" ColumnName="ProblemSummary" />
+                <ScalarProperty Name="ProblemDescription" ColumnName="ProblemDescription" />
+                <ScalarProperty Name="StepsToReproduce" ColumnName="StepsToReproduce" />
+                <ScalarProperty Name="ExpectedOutcome" ColumnName="ExpectedOutcome" />
+                <ScalarProperty Name="ActualOutcome" ColumnName="ActualOutcome" />
+                <ScalarProperty Name="WorkAround" ColumnName="WorkAround" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserTickets">
+            <EntityTypeMapping TypeName="ICT_Bug_CaptureModel.UserTicket">
+              <MappingFragment StoreEntitySet="UserTickets">
+                <ScalarProperty Name="ClientTicketId" ColumnName="ClientTicketId" />
+                <ScalarProperty Name="TicketId" ColumnName="TicketId" />
+                <ScalarProperty Name="OpenID" ColumnName="OpenID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
